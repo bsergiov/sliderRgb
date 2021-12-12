@@ -2,18 +2,64 @@
 //  ViewController.swift
 //  sliderRgb
 //
-//  Created by Сергей Бровко on 11.12.2021.
+//  Created by С on 11.12.2021.
 //
 
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    //    MARK: - IB Outlets
+    
+    @IBOutlet weak var blueValueLabel: UILabel!
+    @IBOutlet weak var redValueLabel: UILabel!
+    @IBOutlet weak var greenValueLabel: UILabel!
+    
+    @IBOutlet weak var blueSlider: UISlider!
+    @IBOutlet weak var redSlider: UISlider!
+    @IBOutlet weak var greenSlider: UISlider!
+    
+    @IBOutlet weak var screenCollorView: UIView!
+    
+    //    MARK: - Live Cicle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        blueSlider.minimumTrackTintColor = .blue
+        redSlider.minimumTrackTintColor = .red
+        greenSlider.minimumTrackTintColor = .green
+        updateScreen()
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        screenCollorView.layer.cornerRadius = 10
+    }
+    
+    //    MARK: - IB Action
+    
+    @IBAction func slidersAction(_ sender: UISlider) {
+        updateScreen()
+    }
+    
+}
 
-
+extension ViewController {
+    
+    private func updateScreen(){
+        blueValueLabel.text = getStringValue(for: blueSlider.value)
+        redValueLabel.text = getStringValue(for: redSlider.value)
+        greenValueLabel.text = getStringValue(for: greenSlider.value)
+        screenCollorView.layer.backgroundColor = CGColor(red: CGFloat(redSlider.value),
+                                                         green: CGFloat(greenSlider.value),
+                                                         blue: CGFloat(blueSlider.value),
+                                                         alpha: 1)
+        
+    }
+    private func getStringValue(for value: Float) -> String {
+        let rounding = Float(round(100 * value) / 100)
+        return "\(rounding)"
+    }
+    
 }
 

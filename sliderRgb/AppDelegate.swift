@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  sliderRgb
 //
-//  Created by Сергей Бровко on 11.12.2021.
+//  Created by С on 11.12.2021.
 //
 
 import UIKit
