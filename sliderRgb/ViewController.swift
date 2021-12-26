@@ -21,6 +21,11 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var screenCollorView: UIView!
     
+    @IBOutlet weak var blueTextFields: UITextField!
+    @IBOutlet weak var redTextFields: UITextField!
+    @IBOutlet weak var greenTextFields: UITextField!
+    
+    
     //    MARK: - Live Cicle
     
     override func viewDidLoad() {
@@ -43,7 +48,7 @@ class ViewController: UIViewController {
     }
     
 }
-
+// MARK: - Private methods
 extension ViewController {
     
     private func updateScreen(){
@@ -63,3 +68,6 @@ extension ViewController {
     
 }
 
+extension ViewController: UITextFieldDelegate {
+    
+}
