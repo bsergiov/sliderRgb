@@ -7,10 +7,7 @@
 
 import UIKit
 
-
-
 class SettingsViewController: UIViewController{
-    
     
     
     //    MARK: - IB Outlets
@@ -39,9 +36,7 @@ class SettingsViewController: UIViewController{
     private var greenFloat: Float!
     private var blueFloat: Float!
     
-    
     //    MARK: - Live Cicle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -80,7 +75,6 @@ class SettingsViewController: UIViewController{
     }
     
     //    MARK: - IB Action
-    
     @IBAction func slidersAction(_ sender: UISlider) {
         updateCollor()
         setLabelText()

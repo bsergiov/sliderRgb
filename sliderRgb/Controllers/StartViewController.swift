@@ -13,16 +13,11 @@ protocol SettingsViewControllerDelegate {
 
 class StartViewController: UIViewController {
 
-    // MARK: - IB Outlets
     
     // MARK: - Public Properties
     var setCollor: UIColor = .white
     
     var settingsUICollor: UIColor?
-    
-    // MARK: - Private Properties
-    
-    // MARK: - Initializers
     
     // MARK: - Life Cicles Methodes / Overide
     override func viewDidLoad() {
@@ -40,10 +35,6 @@ class StartViewController: UIViewController {
         settingsVC.delegate = self
         
     }
-    
-    // MARK: - IB Actions
-    
-    // MARK: - Public Methodes
    
 }
 
@@ -52,6 +43,7 @@ extension StartViewController {
     
 }
 
+// MARK: - Delegate Methodes
 extension StartViewController: SettingsViewControllerDelegate {
     func setNewCollor(color: UIColor) {
         setCollor = color
