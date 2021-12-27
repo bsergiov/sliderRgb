@@ -48,6 +48,8 @@ class SettingsViewController: UIViewController{
         redTextFields.delegate = self
         greenTextFields.delegate = self
         
+        addDoneButtonKeyboards()
+        
         setColorTintMinSliders()
         setValueSliders()
         setLabelText()
@@ -92,6 +94,28 @@ class SettingsViewController: UIViewController{
 }
 // MARK: - Private methods
 extension SettingsViewController {
+    
+    private func addDoneButtonKeyboards() {
+        let positionToolbar = CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50)
+        let doneToolbar: UIToolbar = UIToolbar(frame: positionToolbar)
+        doneToolbar.barStyle = .default
+        
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let done = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector (doneButtonAction))
+        
+        let items = [flexSpace, done]
+        
+        doneToolbar.items = items
+        doneToolbar.sizeToFit()
+        
+        redTextFields.inputAccessoryView = doneToolbar
+        greenTextFields.inputAccessoryView = doneToolbar
+        blueTextFields.inputAccessoryView = doneToolbar
+    }
+    
+    @objc func doneButtonAction() {
+        view.endEditing(true)
+    }
     
     private func setValueSliders() {
         redSlider.value = redFloat
