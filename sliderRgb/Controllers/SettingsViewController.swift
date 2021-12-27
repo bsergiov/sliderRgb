@@ -71,11 +71,6 @@ class SettingsViewController: UIViewController{
         }
     }
     
-    // MARK: - Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-    }
-    
     //    MARK: - IB Action
     @IBAction func slidersAction(_ sender: UISlider) {
         updateCollor()
@@ -209,7 +204,4 @@ extension UIColor {
     var getBlue: CGFloat {
         CIColor(color: self).blue
     }
-    
 }
-
-

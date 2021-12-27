@@ -16,15 +16,9 @@ class StartViewController: UIViewController {
     
     // MARK: - Public Properties
     var setCollor: UIColor = .white
-    
-    var settingsUICollor: UIColor?
+
     
     // MARK: - Life Cicles Methodes / Overide
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         view.backgroundColor = setCollor
     }
